@@ -24,7 +24,7 @@ export class Dice {
         this.state = DiceState.Roll;
         this.interval = setInterval(()=> {
             this.value = Math.floor(Math.random() * 7);
-        }, 500);
+        }, 100);
     }
 
     stop() {
