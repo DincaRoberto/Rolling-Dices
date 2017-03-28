@@ -4,10 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { DiceComponent } from './dice/dice.component';
+import { ControlPanelComponent } from './control-panel/control-panel.component';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DiceComponent,
+    ControlPanelComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
