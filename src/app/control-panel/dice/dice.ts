@@ -1,30 +1,39 @@
-
-enum Direction {
+enum DiceState {
     Roll,
     Idle
 }
 
 export class Dice {
 
-    private state: Direction;
+    private state: DiceState;
     private interval: number;
 
     protected value: number;
 
     constructor() {
-        this.state = Direction.Idle;
+        this.state = DiceState.Idle;
         this.value = 2;
     }
 
     roll() {
-        this.state = Direction.Roll;
-        this.interval = setInterval(()=>{
-            this.value = Math.floor(Math.random()*7);
-        },500);
+
+        if (this.state != DiceState.Idle) {
+            return
+        }
+
+        this.state = DiceState.Roll;
+        this.interval = setInterval(()=> {
+            this.value = Math.floor(Math.random() * 7);
+        }, 500);
     }
 
-    stop(){
-        this.state = Direction.Idle;
+    stop() {
+
+        if (this.state == DiceState.Idle) {
+            return
+        }
+
+        this.state = DiceState.Idle;
         clearInterval(this.interval);
     }
 }

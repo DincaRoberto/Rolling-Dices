@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DiceComponent } from './control-panel/dice/dice.component';
 import { ControlPanelComponent } from './control-panel/control-panel.component';
 import { ChartComponent } from './chart/chart.component';
+import { ControlPanelService } from "./control-panel/control-panel.service";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { ChartComponent } from './chart/chart.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ControlPanelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ControlPanelService } from "./control-panel.service";
 
 @Component({
     selector: 'app-control-panel',
@@ -9,7 +10,8 @@ export class ControlPanelComponent implements OnInit {
 
     private dices = [];
 
-    constructor() {
+    constructor(private _controlPanelService:ControlPanelService) {
+
     }
 
     ngOnInit() {
@@ -24,11 +26,11 @@ export class ControlPanelComponent implements OnInit {
     }
 
     onRollAllDices() {
-
+        this._controlPanelService.rollAllDices();
     }
 
     onStopAllDices() {
-
+        this._controlPanelService.stopAllDices();
     }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Dice } from "./dice";
+import { ControlPanelService } from "../control-panel.service";
 
 @Component({
     selector: 'app-dice',
@@ -8,8 +9,18 @@ import { Dice } from "./dice";
 })
 export class DiceComponent extends Dice implements OnInit {
 
-    constructor() {
+    constructor(private _controlPanelService: ControlPanelService) {
         super();
+
+        this._controlPanelService.stopAllSource$.subscribe(
+            () => {
+                this.stop();
+            });
+
+        this._controlPanelService.rollAllSource$.subscribe(
+            () => {
+                this.roll();
+            });
     }
 
     ngOnInit() {
