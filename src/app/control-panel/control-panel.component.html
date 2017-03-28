@@ -1,6 +1,9 @@
 <p>
-  control-panel works!
+  <button (click)="onAddDice()"> Add a dice </button>
+  <button (click)="onRemoveDice()"> Rmove a dice </button>
+  <button (click)="onRollAllDices()"> Roll all dices </button>
+  <button (click)="onStopAllDices()"> Stop all dices </button>
 </p>
 
 
-<app-dice *ngFor="let el of [1,2,3,4,5]">{{el}}</app-dice>
+<app-dice *ngFor="let dice of dices">{{dice}}</app-dice>
